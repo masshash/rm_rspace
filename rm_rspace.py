@@ -5,7 +5,7 @@ u'''
 テキストファイルから末尾空白を取り除きます。
 
 使い方:
-　　rm_rspace [-c] [-d] [-e ENCODING] FILE [NEWFILE]
+　　rm_rspace [-d] [-c] [-e ENCODING] FILE [NEWFILE]
 
 引数:
   FILE                  末尾空白を削除したいテキストファイルのパス
@@ -13,8 +13,8 @@ u'''
 
 オプション:
   -h, --help            ヘルプメッセージを表示して終了
-  -c, --count           末尾空白を取り除いた行の数を表示
   -d, --display         末尾空白があった行とその行番号を表示
+  -c, --count           末尾空白を取り除いた行の数を表示
   -e ENCODING, --encoding ENCODING
                         指定したエンコーディングでファイルを開く
 
@@ -92,7 +92,7 @@ def main():
 
     parser = argparse.ArgumentParser(
         prog='rm_rspace',
-        usage='python rm_rspace.py [-c] [-d] [-e ENCODING] FILE [NEWFILE]',
+        usage='rm_rspace.py [-d] [-c] [-e ENCODING] FILE [NEWFILE]',
         description=u'テキストから末尾空白を取り除きます',
         add_help=True
     )
@@ -107,14 +107,14 @@ def main():
         help=u'処理後の保存先パス'
     )
     parser.add_argument(
-        '-c', '--count',
-        action='store_true',
-        help=u'末尾空白を取り除いた行の数を表示'
-    )
-    parser.add_argument(
         '-d', '--display',
         action='store_true',
         help=u'末尾空白があった行とその行番号を表示'
+    )
+    parser.add_argument(
+        '-c', '--count',
+        action='store_true',
+        help=u'末尾空白を取り除いた行の数を表示'
     )
     parser.add_argument(
         '-e', '--encoding',
