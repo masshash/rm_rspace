@@ -16,7 +16,7 @@ u'''
   -d, --display         末尾空白があった行とその行番号を表示
   -c, --count           末尾空白を取り除いた行の数を表示
   -e ENCODING, --encoding ENCODING
-                        指定したエンコーディングでファイルを開く
+                        指定したエンコーディングでファイルを開く。省略した場合は UTF-8 で開く
 
 Copyright (c) 2018 Masashi Takahashi
 License: MIT
@@ -119,7 +119,7 @@ def main():
     parser.add_argument(
         '-e', '--encoding',
         default='utf-8',
-        help=u'指定したエンコーディングでファイルを開く'
+        help=u'指定したエンコーディングでファイルを開く。省略した場合は UTF-8 で開く'
     )
     args = parser.parse_args()
     try:
